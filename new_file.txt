@@ -1,1 +1,2 @@
-Git is awesome
+new text line
+new text line
