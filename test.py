@@ -1,1 +1,2 @@
-print('test')
+greeting = 'Hello, World!'
+print(greeting)
