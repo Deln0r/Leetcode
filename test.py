@@ -1,8 +1,7 @@
-from collections import defaultdict
+def updated(dictionary, **kwargs):
+    new = dictionary.copy()
+    new.update(kwargs)
+    return new
 
-
-def collect_indexes(items):
-    result = defaultdict(list)
-    for index, item in enumerate(items):
-        result[item].append(index)
-    return result
+d = {'a': 1, 'b': False}
+print(updated(d, misha = 30))
