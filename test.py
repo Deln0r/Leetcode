@@ -1,7 +1,10 @@
-def updated(dictionary, **kwargs):
-    new = dictionary.copy()
-    new.update(kwargs)
-    return new
-
-d = {'a': 1, 'b': False}
-print(updated(d, misha = 30))
+def filter_map(func, items):
+    list = []
+    for item in items:
+        bull, value = func(item)
+        if bull is True:
+            list += value
+        else:
+            continue
+    print(type(list))
+    return list
