@@ -1,6 +1,7 @@
-def reverse_words(str):
-    return ' '.join(s[::-1] for s in str.split(' '))
+value = set(range(1, 101))
 
 
-text = "This  is  an  example!"
-print(reverse_words(text))
+text1 = 'texts'
+print(value.pop())
+print(value.pop())
+print(value.pop())
