@@ -1,4 +1,4 @@
-lass Solution:
+class Solution:
     def groupThePeople(self, groupSizes: List[int]) -> List[List[int]]:
         groups = collections.defaultdict(list)
         res = []
