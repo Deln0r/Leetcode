@@ -61,19 +61,19 @@
 
 # поиск двух максимумов в последовательности
 
-# def findmax2(seq):
-#     max1 = max(seq[0], seq[1])
-#     max2 = min(seq[0], seq[1])
-#     for i in range(2, len(seq)):
-#         if seq[i] > max1:
-#             max2 = max1
-#             max1 = seq[i]
-#         elif seq[i] > max2:
-#             max2 = seq[i]
-#     return (max1, max2)
+def findmax2(seq):
+    max1 = max(seq[0], seq[1])
+    max2 = min(seq[0], seq[1])
+    for i in range(2, len(seq)):
+        if seq[i] > max1:
+            max2 = max1
+            max1 = seq[i]
+        elif seq[i] > max2:
+            max2 = seq[i]
+    return (max1, max2)
 
-# seq = [-1, -2, -3, -17, -2, 0, 10]
-# print(findmax2(seq))
+seq = [1, 2]
+print(findmax2(seq))
 
 # минимальное чётное число в последовательности
 # def findmineven(seq):
@@ -104,20 +104,20 @@
 
 
 # вершины и впадины
-def isleflood(h):
-    maxpos = 0
-    for i in range(len(h)):
-        if h[i] > h[maxpos]:
-            maxpos = i
-    ans = 0
-    nowmax = 0
-    for i in range(maxpos):
-        if h[i] > nowmax:
-            nowmax = h[i]
-        ans += nowmax - h[i]
-    nowmax = 0
-    for i in range(len(h) - 1, maxpos, -1):
-        if h[i] > nowmax:
-            nowmax = h[i]
-        ans += nowmax - h[i]
-    return ans
+# def isleflood(h):
+#     maxpos = 0
+#     for i in range(len(h)):
+#         if h[i] > h[maxpos]:
+#             maxpos = i
+#     ans = 0
+#     nowmax = 0
+#     for i in range(maxpos):
+#         if h[i] > nowmax:
+#             nowmax = h[i]
+#         ans += nowmax - h[i]
+#     nowmax = 0
+#     for i in range(len(h) - 1, maxpos, -1):
+#         if h[i] > nowmax:
+#             nowmax = h[i]
+#         ans += nowmax - h[i]
+#     return ans
