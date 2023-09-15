@@ -61,19 +61,19 @@
 
 # поиск двух максимумов в последовательности
 
-def findmax2(seq):
-    max1 = max(seq[0], seq[1])
-    max2 = min(seq[0], seq[1])
-    for i in range(2, len(seq)):
-        if seq[i] > max1:
-            max2 = max1
-            max1 = seq[i]
-        elif seq[i] > max2:
-            max2 = seq[i]
-    return (max1, max2)
+# def findmax2(seq):
+#     max1 = max(seq[0], seq[1])
+#     max2 = min(seq[0], seq[1])
+#     for i in range(2, len(seq)):
+#         if seq[i] > max1:
+#             max2 = max1
+#             max1 = seq[i]
+#         elif seq[i] > max2:
+#             max2 = seq[i]
+#     return (max1, max2)
 
-seq = [1, 2]
-print(findmax2(seq))
+# seq = [1, 2]
+# print(findmax2(seq))
 
 # минимальное чётное число в последовательности
 # def findmineven(seq):
@@ -121,3 +121,22 @@ print(findmax2(seq))
 #             nowmax = h[i]
 #         ans += nowmax - h[i]
 #     return ans
+
+###BINARY SEARCH###
+
+def binary_search(seq, item):
+    l = 0
+    r = len(seq) - 1
+    while l <= r:
+        mid = (l + r) // 2
+        guess = seq[mid]
+        if guess == item:
+            return mid
+        elif guess > item:
+            r = mid -1
+        else:
+            l = mid +1
+    return None
+            
+seq = [0, 2, 4, 6, 8, 10]
+print(binary_search(seq, 6))
