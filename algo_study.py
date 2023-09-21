@@ -124,19 +124,22 @@
 
 ###BINARY SEARCH###
 
-def binary_search(seq, item):
-    l = 0
-    r = len(seq) - 1
-    while l <= r:
-        mid = (l + r) // 2
-        guess = seq[mid]
-        if guess == item:
-            return mid
-        elif guess > item:
-            r = mid -1
-        else:
-            l = mid +1
-    return None
+# def binary_search(seq, item):
+#     l = 0
+#     r = len(seq) - 1
+#     while l <= r:
+#         mid = (l + r) // 2
+#         guess = seq[mid]
+#         if guess == item:
+#             return mid
+#         elif guess > item:
+#             r = mid -1
+#         else:
+#             l = mid +1
+#     return None
             
-seq = [0, 2, 4, 6, 8, 10]
-print(binary_search(seq, 6))
+# seq = [0, 2, 4, 6, 8, 10]
+# print(binary_search(seq, 6))
+
+a = isinstance(str, 'aa')
+print(a)
