@@ -140,6 +140,3 @@
             
 # seq = [0, 2, 4, 6, 8, 10]
 # print(binary_search(seq, 6))
-
-a = isinstance(str, 'aa')
-print(a)
