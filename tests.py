@@ -1,16 +1,28 @@
-employee_list = [
-   {"id": 12345, "name": "John", "department": "Kitchen"},
-   {"id": 12456, "name": "Paul", "department": "House Floor"},
-   {"id": 12478, "name": "Sarah", "department": "Management"},
-   {"id": 12434, "name": "Lisa", "department": "Cold Storage"},
-   {"id": 12483, "name": "Ryan", "department": "Inventory Mgmt"},
-   {"id": 12419, "name": "Gill", "department": "Cashier"}
-]
+class A:
+   def __init__(self, c):
+       print("---------Inside class A----------")
+       self.c = c
+   print("Print inside A.")
 
+   def alpha(self):
+       c = self.c + 1
+       return c
 
-def map_id_to_initial(employee_list):
-    
-    dict = {i["name"][0]:i['id'] for i in employee_list}
-    return dict
-   
-print(map_id_to_initial(employee_list))
+print(dir(A))
+print("Instantiating A..")
+a = A(1)
+print(a.alpha())
+
+class B:
+   def __init__(self, a):
+       print("---------Inside class B----------")
+       self.a = a
+
+   print(a.alpha())
+   d = 5
+   print(d)
+   print(a)
+
+print("Instantiating B..")
+b = B(a)
+print(a)
