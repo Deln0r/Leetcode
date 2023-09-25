@@ -1,28 +1,17 @@
 class A:
-   def __init__(self, c):
-       print("---------Inside class A----------")
-       self.c = c
-   print("Print inside A.")
-
-   def alpha(self):
-       c = self.c + 1
-       return c
-
-print(dir(A))
-print("Instantiating A..")
-a = A(1)
-print(a.alpha())
+    def c(self):
+        return "Function inside A"
 
 class B:
-   def __init__(self, a):
-       print("---------Inside class B----------")
-       self.a = a
+    def c(self):
+        return "Function inside B"
 
-   print(a.alpha())
-   d = 5
-   print(d)
-   print(a)
+class C(A, B):
+    def c(self):
+        return "Function inside C"
 
-print("Instantiating B..")
-b = B(a)
-print(a)
+class D(A, C):
+    pass
+
+d = D()
+print(d.c)
