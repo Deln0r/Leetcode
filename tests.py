@@ -1,10 +1,3 @@
-def d():
-    color = 'green'
-    def e():
-        nonlocal color
-        color = 'yellow'
-    e()
-    print('color:' + color)
-    color = 'red'
-color = "blue"
-d()
+st = {1}
+st += st*3
+print(st)
