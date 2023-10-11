@@ -1,3 +1,3 @@
-st = {1}
-st += st*3
+st = 1
+st += st++st
 print(st)
