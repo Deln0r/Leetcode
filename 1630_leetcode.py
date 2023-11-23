@@ -27,3 +27,17 @@ class Solution:
                 res.append(False)
         
         return res
+
+
+
+##################################################### another one
+        ans=[True]*len(l)
+        
+        for i in range(len(l)):
+            s=nums[l[i]:r[i]+1]
+            s.sort(reverse=True)
+            for v in range(len(s)-1):
+                if (s[v+1]-s[v])!=(s[1]-s[0]):
+                    ans[i]=False
+                    break
+        return ans
