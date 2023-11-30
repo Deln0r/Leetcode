@@ -12,5 +12,6 @@ def get_sum(a,b):
         
     return result
 
+
 print(get_sum(5,0))
         
