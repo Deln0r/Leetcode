@@ -1,17 +1,9 @@
-def get_sum(a,b):
-    result = 0
-    if a > b:
-        a, b = b, a
-        
-    elif a == b:
-        return b
-    
-    while a <= b:
-        result += a
-        a += 1
-        
-    return result
-
-
-print(get_sum(5,0))
+L = [1,2,3,4,5,6,7,8,9,0]
+f1 = [x+1 for x in L]
+f2 = (x+1 for x in L)
+print(f1)
+print(f2)
+print(f2.__next__())
+print(next(f2))
+print(iter(f2))
         
