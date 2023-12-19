@@ -8,3 +8,5 @@ class Solution:
                 temp = [M[i+m][j+n] for m,n in dirs if 0<=i+m<row and 0<=j+n<col]
                 res[i][j] = sum(temp)//len(temp)
         return res
+
+
