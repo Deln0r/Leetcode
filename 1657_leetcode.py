@@ -10,3 +10,17 @@ class Solution:
         if sorted(counter1.values())==sorted(counter2.values()) and len(num)==0:
             return True
         return False
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+
+class Solution:
+    def closeStrings(self, w1: str, w2: str) -> bool:
+        return (f:=lambda w:(set(w),sorted(Counter(w).values())))(w1)==f(w2)
