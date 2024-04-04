@@ -143,24 +143,45 @@
 
 
 # Recursive function for Tower of Hanoi
-def hanoi(disks, source, helper, destination):
-    # Base Condition
-    if (disks == 1):
-        print('Disk {} moves from tower {} to tower {}.'.format(disks, source, destination))
-        return
+# def hanoi(disks, source, helper, destination):
+#     # Base Condition
+#     if (disks == 1):
+#         print('Disk {} moves from tower {} to tower {}.'.format(disks, source, destination))
+#         return
 
-    # Recursive calls in which function calls itself
-    hanoi(disks - 1, source, destination, helper)
-    print('Disk {} moves from tower {} to tower {}.'.format(disks, source, destination))
-    hanoi(disks - 1, helper, source, destination)
+#     # Recursive calls in which function calls itself
+#     hanoi(disks - 1, source, destination, helper)
+#     print('Disk {} moves from tower {} to tower {}.'.format(disks, source, destination))
+#     hanoi(disks - 1, helper, source, destination)
 
-# Driver code
-disks = int(input('Number of disks to be displaced: '))
-'''
-Tower names passed as arguments:
-Source: A
-Helper: B
-Destination: C
-'''
-# Actual function call
-hanoi(disks, 'A', 'B', 'C')
+# # Driver code
+# disks = int(input('Number of disks to be displaced: '))
+# '''
+# Tower names passed as arguments:
+# Source: A
+# Helper: B
+# Destination: C
+# '''
+# # Actual function call
+# hanoi(disks, 'A', 'B', 'C')
+
+# a = {1.0 : 'd', True : 'a', 1 : 'b', '1' : 'c'}
+# print(a)
+
+# first_tuple = (1, 2, 3, 4, 5)
+# second_tuple = (2, 4, 5)
+# contains_all = all(elem in first_tuple for elem in second_tuple)
+# print(contains_all) # True
+
+# first_tuple = (1, 2, 3, 4, 5)
+# some_list = [2, 4, 5]
+# contains_all = set(some_list).issubset(set(first_tuple))
+# print(contains_all)
+
+import re
+email_regex = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
+def is_valid_email(email):
+    if re.match(email_regex, email):
+        return True
+    else:
+        return False
