@@ -1,7 +1,4 @@
-function foo() {
-    return {
-        value: "Hello"
-    };
-}
+let firstName = "vasya"
 
-console.log(foo());
+
+console.log(firstName);
