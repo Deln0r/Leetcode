@@ -186,7 +186,11 @@
 #     else:
 #         return False
 
-x = True
-y = False
+# x = True
+# y = False
 
-print(y and x or x)
+# print(y and x or x)
+
+my_list = [1, 2, 'a', 3]
+my_list.sort()
+print(my_list)
