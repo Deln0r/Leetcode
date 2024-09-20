@@ -191,6 +191,10 @@
 
 # print(y and x or x)
 
-my_list = [1, 2, 'a', 3]
-my_list.sort()
-print(my_list)
+# my_list = [1, 2, 'a', 3]
+# my_list.sort()
+# print(my_list)
+
+# str.count 
+
+assert (1 == 1, '1 is not equal to 2')
