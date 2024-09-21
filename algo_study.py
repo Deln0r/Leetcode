@@ -197,4 +197,6 @@
 
 # str.count 
 
-assert (1 == 1, '1 is not equal to 2')
+# assert (1 == 1, '1 is not equal to 2')
+
+print('abc' == 'cba') # False
