@@ -199,4 +199,6 @@
 
 # assert (1 == 1, '1 is not equal to 2')
 
-print('abc' == 'cba') # False
+s = "abcd"
+rev = s[::-1]
+s[:len_ - i] == rev[i:]
