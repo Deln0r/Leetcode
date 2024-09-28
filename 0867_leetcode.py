@@ -7,3 +7,18 @@ class Solution:
                 temp.append(matrix[j][i])
             l.append(temp)
         return l
+    
+
+class Solution:
+    def transpose(self, matrix: List[List[int]]) -> List[List[int]]:
+        rows = len(matrix)
+        cols = len(matrix[0])
+
+        ans = []
+
+        for r in range(cols):
+            row = []
+            for c in range(rows):
+                row.append(matrix[c][r])
+            ans.append(row)
+        return ans
