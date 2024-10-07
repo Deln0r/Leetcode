@@ -91,58 +91,75 @@
 # print(bin_search(l, n))
 
 
-slice = [1]
+# slice = [1]
 
-def is_monotonic (slice):
-    inc = dec = True
-    for i in range(1, len(slice)):
-        if slice[i] < slice[i -1]:
-            inc = False
-        if slice[i] > slice[i -1]:
-            dec = False
-    return inc or dec
+# def is_monotonic (slice):
+#     inc = dec = True
+#     for i in range(1, len(slice)):
+#         if slice[i] < slice[i -1]:
+#             inc = False
+#         if slice[i] > slice[i -1]:
+#             dec = False
+#     return inc or dec
 
-print(is_monotonic(slice))
+# print(is_monotonic(slice))
 
 
-def atm_withdraw(amount, banknotes):
-    """
-    Симулирует работу банкомата. Выдает запрашиваемую сумму, если возможно.
+# def atm_withdraw(amount, banknotes):
+#     """
+#     Симулирует работу банкомата. Выдает запрашиваемую сумму, если возможно.
     
-    :param amount: Запрашиваемая сумма.
-    :param banknotes: Словарь с номиналами купюр и их количеством.
-    :return: Обновленный словарь с купюрами или ошибка.
-    """
-    # Создаем копию словаря для расчетов, чтобы не изменять оригинал до подтверждения выдачи
-    temp_banknotes = banknotes.copy()
+#     :param amount: Запрашиваемая сумма.
+#     :param banknotes: Словарь с номиналами купюр и их количеством.
+#     :return: Обновленный словарь с купюрами или ошибка.
+#     """
+#     # Создаем копию словаря для расчетов, чтобы не изменять оригинал до подтверждения выдачи
+#     temp_banknotes = banknotes.copy()
     
-    # Список номиналов в порядке убывания для удобства выдачи крупных купюр сначала
-    denominations = sorted(temp_banknotes.keys(), reverse=True)
+#     # Список номиналов в порядке убывания для удобства выдачи крупных купюр сначала
+#     denominations = sorted(temp_banknotes.keys(), reverse=True)
     
-    for denomination in denominations:
-        if amount <= 0:
-            break
+#     for denomination in denominations:
+#         if amount <= 0:
+#             break
         
-        # Максимальное количество купюр данного номинала, которые можно выдать
-        count_to_give = min(amount // denomination, temp_banknotes[denomination])
+#         # Максимальное количество купюр данного номинала, которые можно выдать
+#         count_to_give = min(amount // denomination, temp_banknotes[denomination])
         
-        # Уменьшаем количество купюр данного номинала в временном словаре
-        temp_banknotes[denomination] -= count_to_give
-        amount -= denomination * count_to_give
+#         # Уменьшаем количество купюр данного номинала в временном словаре
+#         temp_banknotes[denomination] -= count_to_give
+#         amount -= denomination * count_to_give
     
-    if amount > 0:
-        return "Ошибка: невозможно выдать запрашиваемую сумму"
+#     if amount > 0:
+#         return "Ошибка: невозможно выдать запрашиваемую сумму"
     
-    # Обновляем оригинальный словарь
-    banknotes.update(temp_banknotes)
-    return banknotes
+#     # Обновляем оригинальный словарь
+#     banknotes.update(temp_banknotes)
+#     return banknotes
 
-# Пример использования
-banknotes = {5000: 2, 500: 1, 1000: 3, 200: 0}
-amount = 7500
-result = atm_withdraw(amount, banknotes)
-print(result)  # Ожидаемый результат: {5000: 1, 500: 0, 1000: 3, 200: 0}
+# # Пример использования
+# banknotes = {5000: 2, 500: 1, 1000: 3, 200: 0}
+# amount = 7500
+# result = atm_withdraw(amount, banknotes)
+# print(result)  # Ожидаемый результат: {5000: 1, 500: 0, 1000: 3, 200: 0}
 
-amount = 10000
-result = atm_withdraw(amount, banknotes)
-print(result)  # Ожидаемый результат: Ошибка: невозможно выдать запрашиваемую сумму
+# amount = 10000
+# result = atm_withdraw(amount, banknotes)
+# print(result)  # Ожидаемый результат: Ошибка: невозможно выдать запрашиваемую сумму
+
+apple = [5,5,5]
+capacity = [2,4,2,7]
+
+
+def minimumBoxes(apple, capacity):
+    n = sum(apple)
+    c = 0
+
+    capacity.sort(reversed=True)
+
+    for i in range(len(capacity)):
+        c += capacity[i]
+        if c >= n:
+            return i
+
+print(minimumBoxes(apple, capacity))
