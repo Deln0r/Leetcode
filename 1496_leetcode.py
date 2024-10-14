@@ -18,3 +18,24 @@ class Solution:
             h.add((x,y))
             
         return False
+
+class Solution:
+    def isPathCrossing(self, path: str) -> bool:
+        x, y = 0, 0
+        seen = {(x, y)}
+
+        for step in path:
+            if step == 'N':
+                y += 1
+            elif step == 'S':
+                y -= 1
+            elif step == 'E':
+                x += 1
+            elif step == 'W':
+                x -= 1
+            
+            if (x, y) in seen:
+                return True
+            else:
+                seen.add((x,y))
+        return False
