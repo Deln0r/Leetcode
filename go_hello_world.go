@@ -1,37 +1,53 @@
 package main
 
-import "fmt"
+import (
+	"bufio"
+	"fmt"
+	"os"
+	"strings"
+)
 
-func isMonotonic(array []int) bool {
-	if len(array) <= 2 {
-		return true // Слайс из 0, 1 или 2 элементов всегда монотонный
-	}
-
-	isNonDecreasing := true
-	isNonIncreasing := true
-
-	for i := 1; i < len(array); i++ {
-		if array[i] < array[i-1] {
-			isNonDecreasing = false
-		}
-		if array[i] > array[i-1] {
-			isNonIncreasing = false
-		}
-	}
-
-	return isNonDecreasing || isNonIncreasing // Монотонный, если хотя бы одно условие выполняется
+type Name struct {
+	fname string // Имя
+	lname string // Фамилия
 }
 
 func main() {
-	testCases := [][]int{
-		{1, 7},
-		{1, 1},
-		{3, 3, 1},
-		{9, 5, 1},
-		{23, 5, 23},
+	var filename string
+	fmt.Print("Введите имя текстового файла: ")
+	fmt.Scan(&filename)
+
+	file, err := os.Open(filename)
+	if err != nil {
+		fmt.Println("Ошибка при открытии файла:", err)
+		return
+	}
+	defer file.Close()
+
+	var names []Name
+
+	scanner := bufio.NewScanner(file)
+	for scanner.Scan() {
+		line := scanner.Text()
+		parts := strings.Fields(line)
+		if len(parts) < 2 {
+			fmt.Println("Неверный формат строки:", line)
+			continue
+		}
+		name := Name{
+			fname: parts[0],
+			lname: parts[1],
+		}
+		names = append(names, name)
 	}
 
-	for _, arr := range testCases {
-		fmt.Printf("%v - %t\n", arr, isMonotonic(arr))
+	if err := scanner.Err(); err != nil {
+		fmt.Println("Ошибка при чтении файла:", err)
+		return
+	}
+
+	fmt.Println("Считанные имена и фамилии:")
+	for _, name := range names {
+		fmt.Printf("Имя: %s, Фамилия: %s\n", name.fname, name.lname)
 	}
 }
