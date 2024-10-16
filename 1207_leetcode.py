@@ -15,3 +15,13 @@ class Solution:
             freq.add(has[val])
         
         return True
+
+
+class Solution:
+    def uniqueOccurrences(self, arr: List[int]) -> bool:
+        c = Counter(arr)
+
+        occur = [v for v in c.values()]
+        s_occur = set(occur)
+
+        return len(occur) == len(s_occur)
