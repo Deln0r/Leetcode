@@ -8,3 +8,15 @@ class Solution:
             else:
                 dict[so].append(s)
         return dict.values()
+
+class Solution:
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        db = {}
+
+        for s in strs:
+            key = tuple(sorted(s))
+            if key in db:
+                db[key].append(s)
+            else:
+                db[key] = [s]
+        return list(db.values())
