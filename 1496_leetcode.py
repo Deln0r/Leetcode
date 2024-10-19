@@ -39,3 +39,20 @@ class Solution:
             else:
                 seen.add((x,y))
         return False
+    
+class Solution:
+    def isPathCrossing(self, path: str) -> bool:
+        x, y = 0, 0
+        seen = {(x, y)}
+        d = {'N':(0,1), 'S':(0,-1), 'E':(1,0), 'W':(-1,0)}
+
+        for step in path:
+            dx, dy = d[step]
+            x += dx
+            y += dy
+            
+            if (x, y) in seen:
+                return True
+            else:
+                seen.add((x,y))
+        return False
