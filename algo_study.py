@@ -199,6 +199,8 @@
 
 # assert (1 == 1, '1 is not equal to 2')
 
-s = "abcd"
-rev = s[::-1]
-s[:len_ - i] == rev[i:]
+# s = "abcd"
+# rev = s[::-1]
+# s[:len_ - i] == rev[i:]
+
+print(type(10/True))
