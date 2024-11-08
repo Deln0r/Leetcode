@@ -11,3 +11,12 @@ class Solution:
                 x=nums[1+i]
                 i+=1
         return i+1
+
+class Solution:
+    def removeDuplicates(self, nums: List[int]) -> int:
+        pointer = 0
+        for i in range(len(nums)):
+            if nums[pointer] != nums[i]:
+                pointer += 1
+                nums[pointer], nums[i] = nums[i], nums[pointer]
+        return pointer + 1
