@@ -11,3 +11,31 @@ class Solution:
             palindrome = s[left+1:right]  
             if len(palindrome) > len(longest):longest = palindrome
         return longest
+
+class Solution:
+    def longestPalindrome(self, s: str) -> str:
+        ans = ""
+
+        for i in range(len(s)):
+            l, r = i, i
+
+            while l >= 0 and r < len(s):
+                if s[l] == s[r]:
+                    if len(s[l:r+1]) > len(ans):
+                        ans = s[l:r+1]
+                    l-=1
+                    r+=1
+                else:
+                    break
+
+            l, r = i, i+1
+            
+            while l >= 0 and r < len(s):
+                if s[l] == s[r]:
+                    if len(s[l:r+1]) > len(ans):
+                        ans = s[l:r+1]
+                    l-=1
+                    r+=1
+                else:
+                    break
+        return ans
