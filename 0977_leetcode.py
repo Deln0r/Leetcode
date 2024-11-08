@@ -28,3 +28,25 @@ class Solution:
             nums[i] = (nums[i]**2)
         nums.sort()
         return nums
+
+class Solution:
+    def sortedSquares(self, nums: List[int]) -> List[int]:
+        return sorted([num**2 for num in nums])
+
+
+class Solution:
+    def sortedSquares(self, nums: List[int]) -> List[int]:
+        ans = [0]*len(nums)
+        l = 0
+        r = k = len(nums)-1
+
+        while l<=r:
+            l2, r2 = nums[l]**2, nums[r]**2
+            if l2 > r2:
+                ans[k] = l2
+                l+=1
+            else:
+                ans[k] = r2
+                r-=1
+            k-=1
+        return ans
