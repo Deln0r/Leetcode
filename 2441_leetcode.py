@@ -15,3 +15,27 @@ class Solution:
             else:
                 start += 1
         return large
+
+class Solution:
+    def findMaxK(self, nums: List[int]) -> int:
+        nums.sort()
+        l, r = 0, len(nums)-1
+
+        while l<r:
+            if -nums[l] == nums[r]:
+                return nums[r]
+            elif -nums[l] > nums[r]:
+                l += 1
+            elif -nums[l] < nums[r]:
+                r -= 1
+        return -1
+
+class Solution:
+    def findMaxK(self, nums: List[int]) -> int:
+        s = set(nums)
+        ans = -1
+        for n in nums:
+            if n < 0:
+                if -n in s:
+                    ans = max(ans, -n)
+        return ans
