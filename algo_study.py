@@ -203,4 +203,9 @@
 # rev = s[::-1]
 # s[:len_ - i] == rev[i:]
 
-print(type(10/True))
+# print(type(10/True))
+x = "123"
+y = ''.join(sorted(x, reverse=True))
+print(y)
+
+
