@@ -164,35 +164,43 @@
 
 # print(minimumBoxes(apple, capacity))
 
-import re
+# import re
 
-def is_palindrome(word):
-    return word == word[::-1]
+# def is_palindrome(word):
+#     return word == word[::-1]
 
-def analyze_text(text):
-    # Заменяем тире, дефисы и прочие символы, приводим к нижнему регистру
-    text = re.sub(r'[–—-]', ' ', text)  # тире и дефисы на пробелы
-    text = re.sub(r'(?<=[а-яА-Яa-zA-Z])(?=\.)', '. ', text)  # добавляем пробел после точки, если его нет
-    text = re.sub(r'[^\w\s]', '', text)  # убираем все символы, кроме букв, цифр и пробелов
-    text = text.lower()
+# def analyze_text(text):
+#     # Заменяем тире, дефисы и прочие символы, приводим к нижнему регистру
+#     text = re.sub(r'[–—-]', ' ', text)  # тире и дефисы на пробелы
+#     text = re.sub(r'(?<=[а-яА-Яa-zA-Z])(?=\.)', '. ', text)  # добавляем пробел после точки, если его нет
+#     text = re.sub(r'[^\w\s]', '', text)  # убираем все символы, кроме букв, цифр и пробелов
+#     text = text.lower()
     
-    # Разделяем текст на слова, игнорируя двойные пробелы
-    words = text.split()
+#     # Разделяем текст на слова, игнорируя двойные пробелы
+#     words = text.split()
 
-    # Убираем слова короче 3 символов
-    words = [word for word in words if len(word) >= 3]
+#     # Убираем слова короче 3 символов
+#     words = [word for word in words if len(word) >= 3]
 
-    total_count = len(words)  # Общее количество слов
-    unique_count = len(set(words))  # Количество уникальных слов
-    palindrome_count = sum(1 for word in words if is_palindrome(word))  # Количество палиндромов
+#     total_count = len(words)  # Общее количество слов
+#     unique_count = len(set(words))  # Количество уникальных слов
+#     palindrome_count = sum(1 for word in words if is_palindrome(word))  # Количество палиндромов
 
-    return f"Total: {total_count}, Unique: {unique_count}, Palindrome: {palindrome_count}"
+#     return f"Total: {total_count}, Unique: {unique_count}, Palindrome: {palindrome_count}"
 
-text = """
-Python — это язык программирования, который стал очень популярным за последние годы. Его простота и гибкость привлекают как новичков, так и опытных разработчиков. Начнем с того, что Python поддерживает множество парадигм, включая императивное, объектно-ориентированное и функциональное программирование.Это позволяет программистам выбирать подход, который наиболее подходит для конкретной задачи. Одним из преимуществ Python является его обширная стандартная библиотека, которая облегчает выполнение различных...
-"""
+# text = """
+# Python — это язык программирования, который стал очень популярным за последние годы. Его простота и гибкость привлекают как новичков, так и опытных разработчиков. Начнем с того, что Python поддерживает множество парадигм, включая императивное, объектно-ориентированное и функциональное программирование.Это позволяет программистам выбирать подход, который наиболее подходит для конкретной задачи. Одним из преимуществ Python является его обширная стандартная библиотека, которая облегчает выполнение различных...
+# """
 
-result = analyze_text(text)
-print(result)
+# result = analyze_text(text)
+# print(result)
+
+from functools import lru_cache
+
+@lru_cache(maxsize=10000)
+def my_func(x):
+    return x*x*x*x
+
+print(my_func(10))
 
 
